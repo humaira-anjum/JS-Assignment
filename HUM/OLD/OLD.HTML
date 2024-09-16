@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGE</title>
+    <link rel="icon" href="download.jpg" type="icon/type">
+</head>
+<style>
+  ul li a {
+            justify-content: space-evenly;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-transform: capitalize;
+
+        }
+
+        ul {
+
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: black;
+            width: 600px;
+            height: 29px;
+            margin-left: 260px;
+            margin-top: 20px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            border-radius: 40px;
+
+        }
+        li a {
+            margin-top: 10px;
+        }
+        ul li a:hover {
+            text-decoration: none;
+            justify-content: center;
+            color: #c8ab71;
+            font-size: 20px;
+        }
+
+        
+        
+
+        
+
+      .age-checker{
+        display: grid;
+        align-items: center;
+        text-align: center;
+        /* width: 300px; */
+      }
+      
+      input{
+        justify-content: center;
+        right: 50%;
+        left: 50%;
+        width: 300px;
+        align-items: center;
+        display: grid;
+        margin-bottom: 20px;
+        margin-left: 450px;
+        border-radius: 5px;
+      
+      }
+      button{
+        justify-content: center;
+        flex: content;
+        width: 306px;
+        right: 50%;
+        left: 50%;
+        align-items: center;
+        display: grid;
+        margin-left: 450px;
+        border-radius: 5px;
+        
+      
+      }
+</style>
+
+    <body bgcolor="pink">
+      <ul style="list-style: none;">
+       
+    
+   <li><a href="/GRDE/GRADE.HTML">Grade</a></li>
+    <li><a href="/OLD/OLD.HTML">Age</a></li>
+   <li><a href="/TEMP/TEMP.HTML">Temp</a></li>
+    <li><a href="/GAME/GAME.HTML">Game</a></li>
+    <li><a href="/QUIZ/QUIZ.HTML">Quiz</a></li>
+    
+
+
+
+
+    </ul>
+        <div class="age-checker">
+          <h2>Age Checker</h2>
+          <input type="number" id="ageInput" placeholder="Enter your age">
+          <button onclick="checkAge()">Check Age</button>
+          <p id="result"></p>
+        </div>
+        
+        <script>
+            function checkAge() {
+          var age = parseInt(document.getElementById("ageInput").value);
+        
+          if (isNaN(age)) {
+            document.getElementById("result").innerText = "Please enter a valid age.";
+          } else {
+            if (age >= 19) {
+              document.getElementById("result").innerText = "You are old enough to proceed.";
+            } else {
+              document.getElementById("result").innerText = "You are not old enough to proceed.";
+            }
+          }
+        }
+        </script>
+        </body>
+        </html>
+
+
+
+  <!-- <

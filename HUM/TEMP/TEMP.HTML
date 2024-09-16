@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature </title>
+    <link rel="icon" href="IM4.png" type="icon/type">
+    
+
+</head>
+<body>
+    <ul style="list-style: none;">
+        
+        <li><a href="/GRDE/GRADE.HTML">Grade</a></li>
+        <li><a href="/GAME/GAME.HTML">Game</a></li>
+        <li><a href="/TEMP/TEMP.HTML">Temp</a></li>
+        <li><a href="/OLD/OLD.HTML">Age</a></li>
+        <li><a href="/QUIZ/QUIZ.HTML">Quiz</a></li>
+        
+
+    </ul>
+    <style>
+        ul li a {
+            justify-content: space-evenly;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-transform: capitalize;
+
+        }
+
+        ul {
+
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: black;
+            width: 600px;
+            height: 29px;
+            margin-left: 300px;
+            margin-top: 20px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            border-radius: 40px;
+
+        }
+        li a {
+            margin-top: 10px;
+        }
+        .container {
+    max-width: 400px;
+    margin: 170px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    margin-top: 10px;
+    
+    
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <label for="temperature">Enter temperature:</label>
+        <input type="number" id="temperature">
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <div id="result"></div>
+    </div>
+
+    <script >
+        function convertTemperature() {
+    var temperature = parseFloat(document.getElementById("temperature").value);
+    var unit = document.getElementById("unit").value;
+    var resultElement = document.getElementById("result");
+
+    if (unit === "celsius") {
+        var fahrenheit = (temperature * 9/5) + 32;
+        resultElement.innerHTML = temperature + " Celsius = " + fahrenheit.toFixed(2) + " Fahrenheit";
+    } else {
+        var celsius = (temperature - 32) * 5/9;
+        resultElement.innerHTML = temperature + " Fahrenheit = " + celsius.toFixed(2) + " Celsius";
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="icon" href="images.jpg" type="icon/type">
+    >
+</head>
+<style>
+ body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 180px;
+
+   
+}
+
+p {
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    margin-left: 500px;
+    margin-top: 40px;
+    border-radius: 5px;
+
+    
+}
+
+
+button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+   
+}
+
+button:hover {
+    background-color: #0056b3;
+    
+}
+ul li a {
+            justify-content: space-evenly;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-transform: capitalize;
+
+        }
+
+        ul {
+
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: black;
+            width: 600px;
+            height: 29px;
+            margin-left: 260px;
+            margin-top: 20px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            border-radius: 40px;
+
+        }
+        li a {
+            margin-top: 10px;
+        }
+</style>
+<body>
+    <ul style="list-style: none;">
+       
+        <li><a href="/GRDE/GRADE.HTML">Grade</a></li>
+        <li><a href="/GAME/GAME.HTML">Game</a></li>
+        <li><a href="/TEMP/TEMP.HTML">Temp</a></li>
+        <li><a href="/OLD/OLD.HTML">Age</a></li>
+        <li><a href="/QUIZ/QUIZ.HTML">Quiz</a></li>
+        
+    </ul>
+    <div class="main">
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guessInput">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="message"></p>
+</div>
+    
+</body>
+</html>
+
+<script>
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+
+function checkGuess() {
+    const guess = parseInt(document.getElementById('guessInput').value);
+    const message = document.getElementById('message');
+    
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        message.textContent = 'Please enter a valid number between 1 and 100.';
+    } else if (guess === randomNumber) {
+        message.textContent = 'Congratulations! You guessed the correct number!';
+    } else if (guess < randomNumber) {
+        message.textContent = 'Too low! Try a higher number.';
+    } else {
+        message.textContent = 'Too high! Try a lower number.';
+    }
+}
+</script>
